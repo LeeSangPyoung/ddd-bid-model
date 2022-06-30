@@ -13,7 +13,7 @@ import javax.persistence.*;
 
 @Entity
 
-public abstract class Auction {     // Entity. Domain Class.
+public class Auction {     // Entity. Domain Class.
 
 
     @Id @GeneratedValue(strategy=GenerationType.AUTO)
@@ -47,19 +47,20 @@ public abstract class Auction {     // Entity. Domain Class.
         public void setEndAuctionDate(Date endAuctionDate) {
             this.endAuctionDate = endAuctionDate;
         }
-
-    String auctionStatus;
-        public String getAuctionStatus() {
+    //처음은 무조건 등록
+    AuctionStatus auctionStatus = AuctionStatus.REGIST;
+        public AuctionStatus getAuctionStatus() {
             return auctionStatus;
         }
-        public void setAuctionStatus(String auctionStatus) {
+        public void setAuctionStatus(AuctionStatus auctionStatus) {
             this.auctionStatus = auctionStatus;
         }
 
 
     public String cancel() {
         //answer must be obtained by UI
-        setAuctionStatus("CANCEL"); //취소
+        
+        setAuctionStatus(AuctionStatus.CANCEL); //취소
         return "경매가 취소되었읍니다.";
     }
 
