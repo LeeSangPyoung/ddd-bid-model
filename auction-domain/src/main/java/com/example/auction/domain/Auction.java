@@ -2,8 +2,8 @@ package com.example.auction.domain;
 
 import org.springframework.beans.BeanUtils;
 
-import com.example.auction.domain.AuctionStatus;
-import com.example.auction.AuctionApplication;
+import com.example.auction.domain.AuctionStatus
+;import com.example.auction.AuctionApplication;
 
 import java.util.ArrayList;
 import java.util.List;
